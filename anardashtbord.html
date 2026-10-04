@@ -6,9 +6,11 @@
   <title>مۆدیریتوو ژیرلای</title>
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="ئاوهەنار" />
+  <meta name="apple-mobile-web-app-title" content="مۆدیریتوو ژیرلای" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="theme-color" content="#e11d48" />
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="logo.svg">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: Tahoma, 'Segoe UI', system-ui, sans-serif; }
     body {
@@ -22,6 +24,12 @@
       background: linear-gradient(135deg, #e11d48, #db2777);
       display: inline-flex; align-items: center; justify-content: center;
       font-size: 28px; box-shadow: 0 8px 20px rgba(225,29,72,.35); margin-bottom: 10px;
+    }
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 16px;
     }
     .header h1 { font-size: 20px; font-weight: 700; }
     .header p { font-size: 13px; color: #6b7280; margin-top: 4px; }
@@ -159,7 +167,19 @@
 <body>
   <div class="wrap">
     <div class="header">
-      <div class="logo">🍎</div>
+      <div class="logo">
+        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="56" height="56" rx="16" fill="url(#paint0_linear)"/>
+          <circle cx="28" cy="24" r="8" fill="white" opacity="0.9"/>
+          <path d="M28 32C32.4183 32 36 35.5817 36 40C36 41.1046 35.1046 42 34 42H22C20.8954 42 20 41.1046 20 40C20 35.5817 23.5817 32 28 32Z" fill="white" opacity="0.9"/>
+          <defs>
+            <linearGradient id="paint0_linear" x1="0" y1="0" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#e11d48"/>
+              <stop offset="100%" stop-color="#db2777"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
       <h1>مۆدیریتوو ژیرلای</h1>
       <p id="header-sub">داشبۆرد</p>
     </div>
@@ -262,6 +282,10 @@
   </div>
 
   <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').catch(err => console.log('SW registration failed:', err));
+    }
+
     function toEnglishDigits(str) {
       const persian = '۰۱۲۳۴۵۶۷۸۹', english = '0123456789';
       let s = String(str);
@@ -367,9 +391,9 @@
       const products = getProducts();
       if (!products.length) { list.innerHTML = '<div class="empty">—</div>'; return; }
       list.innerHTML = products.map(p => {
-        if (p.unlimited) return `<div class="inv-item unlim"><div style="flex:1"><div class="name">${p.name}</div><div class="stock unlim">نەژماریا</div></div><div class="price">${p.price.toLocaleString('fa-IR')} ڕیاڵ</div></div>`;
+        if (p.unlimited) return `<div class="inv-item unlim"><div style="flex:1"><div class="name">${p.name}</div><div class="stock unlim">نەژماریا</div></div><div class="price">${p.price.toLocaleString('fa-IR')} ڕ</div></div>`;
         const low = p.stock <= 5;
-        return `<div class="inv-item ${low?'low':''}"><div style="flex:1"><div class="name">${p.name}</div><div class="stock ${low?'low':''}">مەوجوودی: <b>${p.stock.toLocaleString('fa-IR')}</b>${low?' !':''}</div></div><div class="price">${p.price.toLocaleString('fa-IR')} ڕیاڵ</div></div>`;
+        return `<div class="inv-item ${low?'low':''}"><div style="flex:1"><div class="name">${p.name}</div><div class="stock ${low?'low':''}">مەوجوودی: <b>${p.stock.toLocaleString('fa-IR')}</b></div></div><div class="price">${p.price.toLocaleString('fa-IR')} ڕ</div></div>`;
       }).join('');
     }
 
