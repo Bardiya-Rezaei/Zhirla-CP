@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="ku" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>مدیریت مغازه آب انار</title>
+  <title>مۆدیریتوو ژیرلای</title>
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="آب انار" />
+  <meta name="apple-mobile-web-app-title" content="ئاوهەنار" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="theme-color" content="#e11d48" />
   <style>
@@ -160,92 +160,92 @@
   <div class="wrap">
     <div class="header">
       <div class="logo">🍎</div>
-      <h1>مدیریت مغازه آب انار</h1>
-      <p id="header-sub">داشبورد اصلی</p>
+      <h1>مۆدیریتوو ژیرلای</h1>
+      <p id="header-sub">داشبۆرد</p>
     </div>
 
     <div id="page-dashboard">
       <div class="card">
-        <div class="card-head"><h2>🧃 آب انار</h2><p>مدیریت فروش و موجودی</p></div>
+        <div class="card-head"><h2>🧃 ئاوهەنار</h2><p>مۆدیریتی فرووشی و مەوجوودی</p></div>
         <div class="card-body">
-          <button class="btn-row" onclick="showPage('sales')"><div class="icon green">🛒</div><div class="txt"><strong>خرید مشتری</strong><span>ثبت فروش جدید</span></div><div class="arrow">‹</div></button>
-          <button class="btn-row" onclick="showPage('profit')"><div class="icon amber">📊</div><div class="txt"><strong>سود و زیان</strong><span>گزارش مالی و نمودار</span></div><div class="arrow">‹</div></button>
-          <button class="btn-row" onclick="showPage('inventory')"><div class="icon violet">📦</div><div class="txt"><strong>انبار</strong><span>مشاهده موجودی</span></div><div class="arrow">‹</div></button>
-          <button class="btn-row" onclick="showPage('management')"><div class="icon slate">⚙️</div><div class="txt"><strong>مدیریت</strong><span>محصولات و تنظیمات</span></div><div class="arrow">‹</div></button>
+          <button class="btn-row" onclick="showPage('sales')"><div class="icon green">🛒</div><div class="txt"><strong>خەریدوو مۆشتەری</strong><span>ثبتکردنی فرووشی نوێ</span></div><div class="arrow">›</div></button>
+          <button class="btn-row" onclick="showPage('profit')"><div class="icon amber">📊</div><div class="txt"><strong>نموودار</strong><span>راپۆرتی مالی و نموودار</span></div><div class="arrow">›</div></button>
+          <button class="btn-row" onclick="showPage('inventory')"><div class="icon violet">📦</div><div class="txt"><strong>هەماری</strong><span>بینینی مەوجوودی</span></div><div class="arrow">›</div></button>
+          <button class="btn-row" onclick="showPage('management')"><div class="icon slate">⚙️</div><div class="txt"><strong>مۆدیریت</strong><span>کەلووپل و سازاندنەکان</span></div><div class="arrow">›</div></button>
         </div>
       </div>
     </div>
 
     <div id="page-management" class="hidden">
-      <button class="back" onclick="showPage('dashboard')">‹ بازگشت به داشبورد</button>
+      <button class="back" onclick="showPage('dashboard')">‹ گەڕاندن بۆ داشبۆرد</button>
       <div class="card">
-        <div class="card-head slate"><h2>مدیریت</h2><p>تنظیمات فروشگاه</p></div>
+        <div class="card-head slate"><h2>مۆدیریت</h2><p>سازاندنی مۆشتبە</p></div>
         <div class="card-body">
-          <button class="btn-row" onclick="showPage('products')"><div class="icon blue">📦</div><div class="txt"><strong>محصولات</strong><span>افزودن، ویرایش و تنظیم موجودی</span></div><div class="arrow">‹</div></button>
+          <button class="btn-row" onclick="showPage('products')"><div class="icon blue">📦</div><div class="txt"><strong>کەلووپل</strong><span>زیادکردن، دەستکاریکردن و سازاندنی مەوجوودی</span></div><div class="arrow">›</div></button>
         </div>
       </div>
     </div>
 
     <div id="page-products" class="hidden">
-      <button class="back" onclick="showPage('management')">‹ بازگشت به مدیریت</button>
+      <button class="back" onclick="showPage('management')">‹ گەڕاندن بۆ مۆدیریت</button>
       <div class="card">
-        <div class="card-head blue"><h2>محصولات</h2><p>افزودن محصول جدید</p></div>
+        <div class="card-head blue"><h2>کەلووپل</h2><p>زیادکردنی کەڵوی نوێ</p></div>
         <div class="card-body">
-          <div class="mb"><label class="field">نام محصول</label><input id="prod-name" type="text" placeholder="مثلاً: آب انار لیوانی"></div>
-          <div class="mb"><label class="field">قیمت (ریال)</label><input id="prod-price" type="text" inputmode="numeric" placeholder="مثلاً ۴۵۰٬۰۰۰" oninput="formatPriceInput(this)"></div>
-          <div class="mb" id="stock-fields"><label class="field">موجودی اولیه</label><input id="prod-stock" type="number" placeholder="مثلاً 50"></div>
+          <div class="mb"><label class="field">ناموو چیوی</label><input id="prod-name" type="text" placeholder="بۆ نموونە: ئاوهەنار لیوانی"></div>
+          <div class="mb"><label class="field">قیمت بە ڕیاڵ</label><input id="prod-price" type="text" inputmode="numeric" placeholder="بۆ نموونە: ۴۵۰٬۰۰۰" oninput="formatPriceInput(this)"></div>
+          <div class="mb" id="stock-fields"><label class="field">مەوجوودی</label><input id="prod-stock" type="number" placeholder="بۆ نموونە: ٥٠"></div>
           <label class="switch-row" for="prod-unlimited">
             <input type="checkbox" id="prod-unlimited" onchange="toggleUnlimited()">
-            <div class="sw-txt"><strong>موجودی نامحدود / نامشخص</strong><span>اگر تعداد مشخص نیست این گزینه را روشن کنید</span></div>
+            <div class="sw-txt"><strong>نەژماریا</strong><span>ئەگەر ژمارەکە رۆشن نابێ، ئەم هەڵبژاردەیە بگرە</span></div>
           </label>
-          <button class="btn btn-blue" onclick="addProduct()">+ افزودن محصول</button>
+          <button class="btn btn-blue" onclick="addProduct()">+ ئیزافە کەرڐو چیوی</button>
         </div>
       </div>
       <div id="products-list"></div>
     </div>
 
     <div id="page-inventory" class="hidden">
-      <button class="back" onclick="showPage('dashboard')">‹ بازگشت به داشبورد</button>
+      <button class="back" onclick="showPage('dashboard')">‹ گەڕاندن بۆ داشبۆرد</button>
       <div class="card">
-        <div class="card-head violet"><h2>انبار</h2><p>مشاهده موجودی فعلی</p></div>
+        <div class="card-head violet"><h2>هەماری</h2><p>بینینی مەوجوودی ئێستا</p></div>
         <div class="card-body" id="inventory-list"></div>
       </div>
     </div>
 
     <div id="page-sales" class="hidden">
-      <button class="back" onclick="showPage('dashboard')">‹ بازگشت به داشبورد</button>
+      <button class="back" onclick="showPage('dashboard')">‹ گەڕاندن بۆ داشبۆرد</button>
       <div class="card">
-        <div class="card-head green"><h2>خرید مشتری</h2><p>انتخاب محصولات و محاسبه مبلغ</p></div>
+        <div class="card-head green"><h2>خەریدوو مۆشتەری</h2><p>هەڵبژاردنی کەلووپل و حیسابکردنی بڕە</p></div>
         <div class="card-body" id="sales-products"></div>
       </div>
       <div class="summary">
-        <div class="summary-row"><span>جمع کل</span><strong id="total-amount">۰ ریال</strong></div>
-        <button class="btn btn-green" id="pay-btn" disabled onclick="processPayment()">💳 پرداخت با دستگاه پوز</button>
+        <div class="summary-row"><span>جەمعوو گرڐی</span><strong id="total-amount">۰ ڕیاڵ</strong></div>
+        <button class="btn btn-green" id="pay-btn" disabled onclick="processPayment()">💳 پرداخت بە کارتخان</button>
       </div>
     </div>
 
     <div id="page-profit" class="hidden">
-      <button class="back" onclick="showPage('dashboard')">‹ بازگشت به داشبورد</button>
+      <button class="back" onclick="showPage('dashboard')">‹ گەڕاندن بۆ داشبۆرد</button>
       <div class="filters">
-        <button class="filter-btn active" data-filter="1d" onclick="setProfitFilter('1d')">۲۴ ساعت</button>
-        <button class="filter-btn" data-filter="7d" onclick="setProfitFilter('7d')">۷ روز</button>
-        <button class="filter-btn" data-filter="30d" onclick="setProfitFilter('30d')">۳۰ روز</button>
-        <button class="filter-btn" data-filter="1y" onclick="setProfitFilter('1y')">۱ سال</button>
-        <button class="filter-btn" data-filter="5y" onclick="setProfitFilter('5y')">۵ سال</button>
+        <button class="filter-btn active" data-filter="1d" onclick="setProfitFilter('1d')">٢٤ سەعاتێ</button>
+        <button class="filter-btn" data-filter="7d" onclick="setProfitFilter('7d')">٧ ڕوی</button>
+        <button class="filter-btn" data-filter="30d" onclick="setProfitFilter('30d')">٣٠ ڕوی</button>
+        <button class="filter-btn" data-filter="1y" onclick="setProfitFilter('1y')">١ ساڵ</button>
+        <button class="filter-btn" data-filter="5y" onclick="setProfitFilter('5y')">۵ ساڵ</button>
       </div>
       <div class="stats">
-        <div class="stat"><div class="label">کل فروش</div><div class="val" id="profit-total">۰</div><div class="unit">ریال</div></div>
-        <div class="stat green"><div class="label">تعداد فروش</div><div class="val" id="profit-count">۰</div><div class="unit">فاکتور</div></div>
+        <div class="stat"><div class="label">گرڐوو فرووشی</div><div class="val" id="profit-total">۰</div><div class="unit">ڕیاڵ</div></div>
+        <div class="stat green"><div class="label">تعدادوو فرووشی</div><div class="val" id="profit-count">۰</div><div class="unit">ڕەسید</div></div>
       </div>
       <div class="card">
-        <div class="card-head amber"><h2>نمودار فروش محصولات</h2></div>
+        <div class="card-head amber"><h2>نمووداروو ورەتو چیویما</h2></div>
         <div class="card-body">
           <div id="bars-chart" class="bars"></div>
-          <div id="no-chart-data" class="empty hidden">داده‌ای برای نمایش وجود ندارد</div>
+          <div id="no-chart-data" class="empty hidden">زانیاریی بۆ نیشاندانی هەیە</div>
         </div>
       </div>
       <div class="card" style="margin-top:14px">
-        <div class="card-head amber"><h2>جزئیات فروش محصولات</h2></div>
+        <div class="card-head amber"><h2>جۆزٸیاتوو ورەتو چیویما</h2></div>
         <div class="card-body" id="profit-products-list"></div>
       </div>
     </div>
@@ -254,10 +254,10 @@
   <div id="payment-modal" class="modal-bg hidden">
     <div class="modal">
       <div class="modal-icon">✓</div>
-      <h3>پرداخت موفق</h3>
+      <h3>پرداخت مۆەفەق</h3>
       <div class="amt" id="payment-amount"></div>
-      <p>فروش ثبت شد</p>
-      <button class="btn btn-green" onclick="closePaymentModal()">باشه</button>
+      <p>فرووش سەپت بی</p>
+      <button class="btn btn-green" onclick="closePaymentModal()">خاس</button>
     </div>
   </div>
 
@@ -285,7 +285,7 @@
     function saveSales(s) { localStorage.setItem('anardasht_sales', JSON.stringify(s)); }
 
     const pages = ['dashboard','management','products','sales','profit','inventory'];
-    const titles = { dashboard:'داشبورد اصلی', management:'مدیریت', products:'محصولات', sales:'خرید مشتری', profit:'سود و زیان', inventory:'انبار' };
+    const titles = { dashboard:'داشبۆرد', management:'مۆدیریت', products:'کەلووپل', sales:'خەریدوو مۆشتەری', profit:'نموودار', inventory:'هەماری' };
     function showPage(page) {
       pages.forEach(p => { const el = document.getElementById('page-' + p); if (el) el.classList.add('hidden'); });
       const t = document.getElementById('page-' + page); if (t) t.classList.remove('hidden');
@@ -301,7 +301,7 @@
       const price = parsePrice(document.getElementById('prod-price').value);
       const unlimited = document.getElementById('prod-unlimited').checked;
       const stock = unlimited ? 0 : (parseInt(document.getElementById('prod-stock').value) || 0);
-      if (!name || !price || price <= 0) { alert('نام و قیمت محصول را درست وارد کنید'); return; }
+      if (!name || !price || price <= 0) { alert('ناموو چیوی و قیمت بە درستی داخڵ بکە'); return; }
       const products = getProducts();
       products.push({ id: Date.now(), name, price, stock, unlimited });
       saveProducts(products);
@@ -313,7 +313,7 @@
       renderProducts();
     }
     function deleteProduct(id) {
-      if (!confirm('آیا از حذف این محصول مطمئن هستید؟')) return;
+      if (!confirm('ئایا لە سڕینەوەی ئەم چیویە دڵنیاییت؟')) return;
       saveProducts(getProducts().filter(p => String(p.id) !== String(id)));
       renderProducts();
     }
@@ -322,7 +322,7 @@
       const p = products.find(pr => String(pr.id) === String(id));
       if (!p || p.unlimited) return;
       const num = parseInt(value);
-      if (isNaN(num) || num < 0) { alert('عدد معتبر وارد کنید'); renderProducts(); return; }
+      if (isNaN(num) || num < 0) { alert('ژمارەی درست داخڵ بکە'); renderProducts(); return; }
       p.stock = num; saveProducts(products); renderProducts();
     }
     function changeStockBy(id, delta) {
@@ -342,20 +342,20 @@
     function renderProducts() {
       const list = document.getElementById('products-list');
       const products = getProducts();
-      if (!products.length) { list.innerHTML = '<div class="empty">هنوز محصولی اضافه نشده است</div>'; return; }
+      if (!products.length) { list.innerHTML = '<div class="empty">هتد چیویت زیاد نەکردووە</div>'; return; }
       list.innerHTML = products.map(p => `
         <div class="item">
           <div class="item-top">
-            <div><div class="item-name">${p.name}</div><div class="item-price">${p.price.toLocaleString('fa-IR')} ریال</div></div>
-            <button type="button" class="del-btn" onclick="deleteProduct(${p.id})">حذف</button>
+            <div><div class="item-name">${p.name}</div><div class="item-price">${p.price.toLocaleString('fa-IR')} ڕیاڵ</div></div>
+            <button type="button" class="del-btn" onclick="deleteProduct(${p.id})">لابرڐەی</button>
           </div>
           <label class="switch-row" style="margin-bottom:8px;padding:8px 10px">
             <input type="checkbox" ${p.unlimited ? 'checked' : ''} onchange="toggleProductUnlimited(${p.id})">
-            <div class="sw-txt"><strong style="font-size:12px">موجودی نامحدود / نامشخص</strong></div>
+            <div class="sw-txt"><strong style="font-size:12px">نەژماریا</strong></div>
           </label>
           ${p.unlimited
-            ? '<div class="badge-unlimited">موجودی نامحدود</div>'
-            : `<div class="stock-box"><span>موجودی:</span>
+            ? '<div class="badge-unlimited">نەژماریا</div>'
+            : `<div class="stock-box"><span>مەوجوودی:</span>
                 <button type="button" class="qbtn minus" onclick="changeStockBy(${p.id},-1)">−</button>
                 <input type="number" value="${p.stock}" min="0" onchange="updateStock(${p.id},this.value)">
                 <button type="button" class="qbtn plus" onclick="changeStockBy(${p.id},1)">+</button></div>`}
@@ -365,11 +365,11 @@
     function renderInventory() {
       const list = document.getElementById('inventory-list');
       const products = getProducts();
-      if (!products.length) { list.innerHTML = '<div class="empty">هنوز محصولی تعریف نشده<small>از مدیریت → محصولات اضافه کنید</small></div>'; return; }
+      if (!products.length) { list.innerHTML = '<div class="empty">هتد چیویت پێناسە نەکردووە<small>لە مۆدیریت → کەلووپل زیاد بکە</small></div>'; return; }
       list.innerHTML = products.map(p => {
-        if (p.unlimited) return `<div class="inv-item unlim"><div style="flex:1"><div class="name">${p.name}</div><div class="stock unlim">موجودی نامحدود / نامشخص</div></div><div class="price">${p.price.toLocaleString('fa-IR')} ریال</div></div>`;
+        if (p.unlimited) return `<div class="inv-item unlim"><div style="flex:1"><div class="name">${p.name}</div><div class="stock unlim">نەژماریا</div></div><div class="price">${p.price.toLocaleString('fa-IR')} ڕیاڵ</div></div>`;
         const low = p.stock <= 5;
-        return `<div class="inv-item ${low?'low':''}"><div style="flex:1"><div class="name">${p.name}</div><div class="stock ${low?'low':''}">موجودی: <b>${p.stock.toLocaleString('fa-IR')}</b>${low?' (کم)':''}</div></div><div class="price">${p.price.toLocaleString('fa-IR')} ریال</div></div>`;
+        return `<div class="inv-item ${low?'low':''}"><div style="flex:1"><div class="name">${p.name}</div><div class="stock ${low?'low':''}">مەوجوودی: <b>${p.stock.toLocaleString('fa-IR')}</b>${low?' ⚠️':'}</div></div><div class="price">${p.price.toLocaleString('fa-IR')} ڕیاڵ</div></div>`;
       }).join('');
     }
 
@@ -377,13 +377,13 @@
     function renderSales() {
       const container = document.getElementById('sales-products');
       const products = getProducts(); cart = {};
-      if (!products.length) { container.innerHTML = '<div class="empty">هنوز محصولی تعریف نشده<small>از مدیریت → محصولات اضافه کنید</small></div>'; updateTotal(); return; }
+      if (!products.length) { container.innerHTML = '<div class="empty">هتد چیویت پێناسە نەکردووە<small>لە مۆدیریت → کەلووپل زیاد بکە</small></div>'; updateTotal(); return; }
       container.innerHTML = products.map(p => `
         <div class="sales-item">
           <div class="info">
             <div class="name">${p.name}</div>
-            <div class="price">${p.price.toLocaleString('fa-IR')} ریال</div>
-            <div class="stock">${p.unlimited ? 'موجودی نامحدود' : 'موجودی: ' + p.stock.toLocaleString('fa-IR')}</div>
+            <div class="price">${p.price.toLocaleString('fa-IR')} ڕیاڵ</div>
+            <div class="stock">${p.unlimited ? 'نەژماریا' : 'مەوجوودی: ' + p.stock.toLocaleString('fa-IR')}</div>
           </div>
           <div class="qty-ctrl">
             <button type="button" class="qbtn gray" onclick="changeQty(${p.id},-1)">−</button>
@@ -398,7 +398,7 @@
       if (!product) return;
       let next = (cart[id] || 0) + delta;
       if (next < 0) next = 0;
-      if (!product.unlimited && next > product.stock) { alert('موجودی کافی نیست'); return; }
+      if (!product.unlimited && next > product.stock) { alert('مەوجوودی تێی نیە'); return; }
       cart[id] = next;
       document.getElementById('qty-' + id).textContent = next.toLocaleString('fa-IR');
       updateTotal();
@@ -406,7 +406,7 @@
     function updateTotal() {
       const products = getProducts(); let total = 0;
       Object.keys(cart).forEach(id => { const p = products.find(pr => String(pr.id) === String(id)); if (p) total += p.price * cart[id]; });
-      document.getElementById('total-amount').textContent = total.toLocaleString('fa-IR') + ' ریال';
+      document.getElementById('total-amount').textContent = total.toLocaleString('fa-IR') + ' ڕیاڵ';
       document.getElementById('pay-btn').disabled = total === 0;
     }
     function processPayment() {
@@ -426,7 +426,7 @@
       const sales = getSales();
       sales.push({ id: Date.now(), date: new Date().toISOString(), items, total });
       saveSales(sales); saveProducts(products);
-      document.getElementById('payment-amount').textContent = total.toLocaleString('fa-IR') + ' ریال';
+      document.getElementById('payment-amount').textContent = total.toLocaleString('fa-IR') + ' ڕیاڵ';
       document.getElementById('payment-modal').classList.remove('hidden');
     }
     function closePaymentModal() { document.getElementById('payment-modal').classList.add('hidden'); showPage('sales'); }
@@ -458,11 +458,11 @@
       document.getElementById('profit-count').textContent = filtered.length.toLocaleString('fa-IR');
       const listEl = document.getElementById('profit-products-list');
       const entries = Object.entries(productMap).sort((a,b) => b[1].amount - a[1].amount);
-      if (!entries.length) listEl.innerHTML = '<div class="empty">در این بازه زمانی فروشی ثبت نشده</div>';
+      if (!entries.length) listEl.innerHTML = '<div class="empty">لە ئەم ماوەی کاتیدا فرووشیت ثبت نەکرا</div>';
       else listEl.innerHTML = entries.map(([name, data], i) => `
         <div class="profit-list-item">
           <div class="dot" style="background:${chartColors[i % chartColors.length]}"></div>
-          <div><div class="pname">${name}</div><div class="pqty">${data.qty.toLocaleString('fa-IR')} عدد فروخته شده</div></div>
+          <div><div class="pname">${name}</div><div class="pqty">${data.qty.toLocaleString('fa-IR')} فرووتاند</div></div>
           <div class="pamt">${data.amount.toLocaleString('fa-IR')} ر</div>
         </div>`).join('');
       const barsEl = document.getElementById('bars-chart');
